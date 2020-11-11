@@ -1512,7 +1512,7 @@ bool Driver::HandleErrorResponse(uint8 const _error, uint8 const _nodeId, char c
 	}
 	if (Node* node = GetNodeUnsafe(_nodeId))
 	{
-		if (++node->m_errors >= 3)
+		if (++node->m_errors >= 10)
 		{
 			node->SetNodeAlive(false);
 		}
