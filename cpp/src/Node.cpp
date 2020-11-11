@@ -1951,6 +1951,7 @@ void Node::SetNodeAlive(bool const _isAlive)
 		notification->SetHomeAndNodeIds(m_homeId, m_nodeId);
 		notification->SetNotification(Notification::Code_Alive);
 	}
+    /*
 	else
 	{
 		Log::Write(LogLevel_Error, m_nodeId, "ERROR: node presumed dead");
@@ -1964,6 +1965,7 @@ void Node::SetNodeAlive(bool const _isAlive)
 		notification->SetHomeAndNodeIds(m_homeId, m_nodeId);
 		notification->SetNotification(Notification::Code_Dead);
 	}
+    */
 	GetDriver()->QueueNotification(notification);
 }
 
