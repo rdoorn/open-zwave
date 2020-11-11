@@ -1951,6 +1951,20 @@ void Node::SetNodeAlive(bool const _isAlive)
 		notification->SetHomeAndNodeIds(m_homeId, m_nodeId);
 		notification->SetNotification(Notification::Code_Alive);
 	}
+    else
+    {
+		Log::Write(LogLevel_Error, m_nodeId, "WARNING: node presumed dead, but ignoring it");
+		m_nodeAlive = true;
+		m_errors = 0;
+		if (m_queryStage != Node::QueryStage_Complete)
+		{
+			m_queryRetries = 0; // restart at last stage
+			AdvanceQueries();
+		}
+		notification = new Notification(Notification::Type_Notification);
+		notification->SetHomeAndNodeIds(m_homeId, m_nodeId);
+		notification->SetNotification(Notification::Code_Alive);
+    }
     /*
 	else
 	{
