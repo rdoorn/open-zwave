@@ -224,9 +224,9 @@ namespace OpenZWave
 #define MAX_TRIES		3	// set this to one, as I believe now that a ACK failure is indication that the device is offline, hence additional attempts will not work.
 #define MAX_MAX_TRIES		10	// Don't exceed this retry limit
 #define ACK_TIMEOUT	3000		// How long to wait for an ACK
-#define BYTE_TIMEOUT	300
+#define BYTE_TIMEOUT	500
 //#define RETRY_TIMEOUT	40000		// Retry send after 40 seconds
-#define RETRY_TIMEOUT	20000		// Retry send after 10 seconds (we might need to keep this below 10 for Security CC to function correctly)
+#define RETRY_TIMEOUT	40000		// Retry send after 10 seconds (we might need to keep this below 10 for Security CC to function correctly)
 
 #define SOF												0x01
 #define ACK												0x06
