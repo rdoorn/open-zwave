@@ -152,7 +152,8 @@ namespace OpenZWave
 
 				uint8 GetMaxSendAttempts() const
 				{
-					return m_maxSendAttempts;
+                    return MAX_MAX_TRIES
+					//return m_maxSendAttempts;
 				}
 				void SetMaxSendAttempts(uint8 _count)
 				{
