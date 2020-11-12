@@ -357,7 +357,7 @@ void Driver::DriverThreadProc(Internal::Platform::Event* _exitEvent)
 			Internal::Platform::TimeStamp retryTimeStamp;
 			int retryTimeout = RETRY_TIMEOUT;
 			Options::Get()->GetOptionAsInt("RetryTimeout", &retryTimeout);
-			//retryTimeout = RETRY_TIMEOUT * 10;
+			retryTimeout = RETRY_TIMEOUT * 10;
 			while (true)
 			{
 				Log::Write(LogLevel_StreamDetail, "      Top of DriverThreadProc loop.");
